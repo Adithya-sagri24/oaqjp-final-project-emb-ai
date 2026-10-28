@@ -60,7 +60,7 @@ def emotion_detector(text_to_analyze):
 
     # Offline simulation for environment outside IBM Skills Network
     lower = text_to_analyze.lower()
-    if "mad" in lower or "anger" in lower or "hate" in lower:
+    if "mad" in lower or "anger" in lower or "angry" in lower or "hate" in lower:
         emotions = {
             'anger': 0.85, 'disgust': 0.05, 'fear': 0.05,
             'joy': 0.02, 'sadness': 0.03

@@ -1,0 +1,39 @@
+"""
+Unit tests for the EmotionDetection package.
+"""
+import unittest
+from EmotionDetection.emotion_detection import emotion_detector
+
+
+class TestEmotionDetector(unittest.TestCase):
+    """
+    Test cases for emotion_detector function.
+    """
+    def test_emotion_detector(self):
+        """
+        Verify dominant emotion output for 5 distinct test statements.
+        """
+        # Test 1: Statement with dominant emotion 'joy'
+        result_1 = emotion_detector('I am glad this happened')
+        self.assertEqual(result_1['dominant_emotion'], 'joy')
+
+        # Test 2: Statement with dominant emotion 'anger'
+        result_2 = emotion_detector('I am really mad about this')
+        self.assertEqual(result_2['dominant_emotion'], 'anger')
+
+        # Test 3: Statement with dominant emotion 'disgust'
+        result_3 = emotion_detector('I feel disgusted just hearing about this')
+        self.assertEqual(result_3['dominant_emotion'], 'disgust')
+
+        # Test 4: Statement with dominant emotion 'sadness'
+        result_4 = emotion_detector('I am so sad about this')
+        self.assertEqual(result_4['dominant_emotion'], 'sadness')
+
+        # Test 5: Statement with dominant emotion 'fear'
+        result_5 = emotion_detector('I am really afraid that this will happen')
+        self.assertEqual(result_5['dominant_emotion'], 'fear')
+
+
+if __name__ == '__main__':
+    unittest.main()
+
